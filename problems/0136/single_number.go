@@ -1,9 +1,9 @@
 package problems
 
 func singleNumber(nums []int) int {
-	result := 0
+	single := 0
 	for _, num := range nums {
-		result ^= num
+		single ^= num
 	}
-	return result
+	return single
 }
