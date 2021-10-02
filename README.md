@@ -1,1 +1,3 @@
 # leetcode
+
+Let's GO!
