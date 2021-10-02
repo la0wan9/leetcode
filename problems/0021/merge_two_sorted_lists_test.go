@@ -25,9 +25,21 @@ func TestMergeTwoSortedLists(t *testing.T) {
 		l2     *ListNode
 		result *ListNode
 	}{
-		{intSlice2ListNode([]int{1, 2, 4}), intSlice2ListNode([]int{1, 3, 4}), intSlice2ListNode([]int{1, 1, 2, 3, 4, 4})},
-		{intSlice2ListNode([]int{}), intSlice2ListNode([]int{}), intSlice2ListNode([]int{})},
-		{intSlice2ListNode([]int{}), intSlice2ListNode([]int{0}), intSlice2ListNode([]int{0})},
+		{
+			intSlice2ListNode([]int{1, 2, 4}),
+			intSlice2ListNode([]int{1, 3, 4}),
+			intSlice2ListNode([]int{1, 1, 2, 3, 4, 4}),
+		},
+		{
+			intSlice2ListNode([]int{}),
+			intSlice2ListNode([]int{}),
+			intSlice2ListNode([]int{}),
+		},
+		{
+			intSlice2ListNode([]int{}),
+			intSlice2ListNode([]int{0}),
+			intSlice2ListNode([]int{0}),
+		},
 	}
 	for _, c := range cases {
 		if result := mergeTwoLists(c.l1, c.l2); !cmp.Equal(result, c.result) {
